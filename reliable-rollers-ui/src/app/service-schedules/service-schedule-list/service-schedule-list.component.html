@@ -1,0 +1,26 @@
+<div class="ss-list">
+  <h2>Service Schedules</h2>
+  <table class="ss-table">
+    <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Address</th>
+      <th>Garbage Pickup Day</th>
+      <th>Next Pickup Date</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let schedule of serviceSchedules">
+      <td>{{ schedule.customerName }}</td>
+      <td>{{ schedule.customerAddress }}</td>
+      <td>{{ schedule.garbagePickupDay }}</td>
+      <td>{{ schedule.nextPickupDate | date }}</td>
+      <td>
+        <button class="complete-btn" (click)="goToServiceLog(schedule.id)">Complete Service</button>
+        <button *ngIf="isAdmin" class="delete-btn" (click)="deleteSchedule(schedule.id)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

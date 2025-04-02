@@ -1,0 +1,28 @@
+<div class="el-list">
+  <h2>Employee Management</h2>
+  <button class="add-btn" (click)="addEmployee()">Add Employee</button>
+
+  <table class="el-table">
+    <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.firstName }}</td>
+      <td>{{ employee.lastName }}</td>
+      <td>{{ employee.email }}</td>
+      <td>{{ employee.role?.roleName }}</td>
+      <td class="button-container">
+        <button class="btn edit-btn" (click)="editEmployee(employee)">Edit</button>
+        <button class="btn delete-btn" (click)="deleteEmployee(employee.id)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
