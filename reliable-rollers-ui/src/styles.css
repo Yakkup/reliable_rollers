@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #f7f7f7;
+  color: #333;
+}
+
+.app-background {
+  background: linear-gradient(135deg, #00008B, #008080);
+  min-height: 100vh;
+}
+
+.navbar {
+  background-color: #CC5500 !important;
+}
+
+.navbar a {
+  color: #ffffff !important;
+}
+
+.navbar a:hover {
+  color: #808000 !important;
+}
+
+a {
+  color: #008080;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #808000;
+}
+
+.container {
+  padding: 20px;
+}
+
+.btn-primary {
+  background-color: #CC5500;
+  border-color: #CC5500;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #B04B00;
+  border-color: #A84300;
+}
+

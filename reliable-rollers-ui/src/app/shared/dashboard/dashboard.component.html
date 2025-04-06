@@ -1,0 +1,74 @@
+<div class="dashboard-container">
+  <h2>Dashboard</h2>
+  <div class="reports-wrapper">
+    <div class="report">
+      <h3>Services Due Today</h3>
+      <table class="report-table">
+        <thead>
+        <tr>
+          <th>Customer</th>
+          <th>Address</th>
+          <th>Pickup Day</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let service of servicesDueToday">
+          <td>{{ service.customerName }}</td>
+          <td>{{ service.customerAddress }}</td>
+          <td>{{ service.garbagePickupDay }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="report">
+      <h3>Services Due Tomorrow</h3>
+      <table class="report-table">
+        <thead>
+        <tr>
+          <th>Customer</th>
+          <th>Address</th>
+          <th>Pickup Day</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let service of servicesDueTomorrow">
+          <td>{{ service.customerName }}</td>
+          <td>{{ service.customerAddress }}</td>
+          <td>{{ service.garbagePickupDay }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="report">
+      <h3>Completed Services Per Month</h3>
+      <table class="report-table">
+        <thead>
+        <tr>
+          <th>Month</th>
+          <th>Completed Services</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let month of completedServices | keyvalue">
+          <td>{{ month.key }}</td>
+          <td>{{ month.value }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="generate-report">
+    <h3>Generate Service Schedule Report</h3>
+
+    <label for="startDate">Start Date:</label>
+    <input type="date" id="startDate" [(ngModel)]="startDate"/>
+
+    <label for="endDate">End Date:</label>
+    <input type="date" id="endDate" [(ngModel)]="endDate"/>
+
+    <button class="export-btn" (click)="generateReport()">Generate Report</button>
+  </div>
+</div>
